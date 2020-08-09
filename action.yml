@@ -1,0 +1,11 @@
+name: 'Semantic Releaser for All Languages'
+description: 'Semantic Releaser GitHub Action. Simple Usage. No files needed. Language Independent'
+author: 'Jossef Harush'
+branding:
+  icon: 'package'
+  color: 'green'
+runs:
+  using: "composite"
+  steps:
+    - run: npx semantic-release@v17.1.1 -b master -r git@github.com:$GITHUB_REPOSITORY.git -p @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/github
+      shell: bash
